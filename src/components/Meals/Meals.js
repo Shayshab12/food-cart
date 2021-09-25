@@ -19,7 +19,7 @@ const Meals = () => {
     const searchText = event.target.value;
     fetch(
       `https://www.themealdb.com/api/json/v1/1/search.php?s=${
-        searchText ? `${searchText}` : `a`
+        searchText && searchText.length <= 2 ? `${searchText}` : `a`
       }`
     )
       .then((res) => res.json())
